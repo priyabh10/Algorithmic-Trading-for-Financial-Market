@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}User{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 mb-3 >
+    <img src="/static/annie-spratt-Jr8byYZmTTU-unsplash.jpg" class="d-block w-100 " alt="...">
+</div>
+<div class="container mb-3 py-4">
+    <h1 class="text-center"></h1>
+    
+    <p class="card-text">
+        <a href={{auth_code_url}} target ='_blank'> Click here to generate auth code </a>
+    </p>
+    <form method="post" action="/output">
+    {% csrf_token %}
+        <div class="form-group">
+        </div>
+            <div class="card-body">
+            </div>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+                  <div class="btn-group">
+            <label for="auth">Auth Code</label>
+            <input type="auth" class="form-control" id="auth" name="auth" placeholder="Enter Your auth code" required>
+        </div>      
+        <button class="btn btn-primary" onclick = "location.href='{% url 'script' %}' type="submit>submit</button>
+    </form>
+
+</div>
+
+{% endblock body %}
